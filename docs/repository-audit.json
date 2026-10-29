@@ -1,0 +1,15 @@
+{
+  "repository_name": "cmv1lh",
+  "published": false,
+  "commit_created": false,
+  "remote_configured": false,
+  "owner_path_findings": [],
+  "common_secret_pattern_findings": [],
+  "licensing": "Elexon and third-party notices retained; no application-code licence granted",
+  "audit_scope": "79 staged source, documentation, test and snapshot files; archive member paths and text checked",
+  "application_source_matches_validated_project": true,
+  "data_snapshot_checksum_valid": true,
+  "vercel_authentication_files_included": false,
+  "readme_production_url": "https://cmv1lh.vercel.app",
+  "publication_authorized": true
+}

@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:24-bookworm-slim}
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.14-slim-bookworm}
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:${PORT:-8000}"
+    environment:
+      PORT: ${PORT:-8000}
+      WIND_DATA_ROOT: /app
+      WIND_STATIC_DIR: /app/static
+      WIND_DECISION_CUTOFF: ${WIND_DECISION_CUTOFF:-09:20}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    stop_grace_period: 25s

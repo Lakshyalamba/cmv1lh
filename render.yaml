@@ -1,0 +1,16 @@
+# Fallback only. Do not apply this Blueprint until separately approved.
+# Use a Hobby workspace with NO payment method; never upgrade this service.
+services:
+  - type: web
+    name: cmv1lh
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health/ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: WIND_DECISION_CUTOFF
+        value: "09:20"
+      - key: LOG_LEVEL
+        value: info

@@ -1,0 +1,42 @@
+{
+  "build": "User Terminal build completed successfully (161.9s); built image inspected and executed here",
+  "image": {
+    "architecture": "arm64",
+    "bytes": 366646814,
+    "user": "10001:10001"
+  },
+  "container": {
+    "health": "healthy",
+    "readonly": true,
+    "caps": [
+      "ALL"
+    ]
+  },
+  "http_verification": {
+    "decision_dates": 31,
+    "observation_rows": 1488,
+    "matched_pairs": 744,
+    "accuracy": {
+      "status": "ok",
+      "observation_count": 744,
+      "mae_mw": 2022.470430107527,
+      "rmse_mw": 2497.407157584179,
+      "bias_mw": 1745.9381720430108,
+      "error_definition": "forecast_mw - actual_mw"
+    },
+    "health": "ready"
+  },
+  "raw_json_files": 138,
+  "forecast_records": 22192,
+  "actual_records": 1488,
+  "shutdown": "Compose stop completed with exit 0 and lifespan shutdown log; Compose restart healthy",
+  "runtime_error_lines": [],
+  "tests": {
+    "python_passed": 45,
+    "frontend_passed": 15,
+    "typescript": "passed",
+    "production_build": "passed",
+    "playwright": "4 cases unable to launch Chrome in host sandbox"
+  },
+  "fixes": []
+}

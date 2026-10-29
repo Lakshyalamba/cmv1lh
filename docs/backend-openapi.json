@@ -1,0 +1,1265 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Wind forecast accuracy API",
+    "description": "Retrospective January 2026 decision-time wind forecasts and accuracy. No interpolation.",
+    "version": "0.2.0"
+  },
+  "paths": {
+    "/api/decisions": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Decisions",
+        "description": "All January decision dates, with availability and coverage under the chosen cutoff.",
+        "operationId": "decisions_api_decisions_get",
+        "parameters": [
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/decisions/{decision_date}/forecasts": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Forecasts",
+        "description": "24 native hourly target slots; missing forecasts are null, never interpolated.",
+        "operationId": "forecasts_api_decisions__decision_date__forecasts_get",
+        "parameters": [
+          {
+            "name": "decision_date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "title": "Decision Date"
+            }
+          },
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForecastResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/decisions/{decision_date}/actuals": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Actuals",
+        "description": "48 half-hour outturn slots for next-day delivery; historical revisions are retrospective.",
+        "operationId": "actuals_api_decisions__decision_date__actuals_get",
+        "parameters": [
+          {
+            "name": "decision_date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "title": "Decision Date"
+            }
+          },
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActualResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/decisions/{decision_date}/comparisons": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Comparisons",
+        "description": "48 half-hour grid rows with explicit missingness and signed errors only for matched points.",
+        "operationId": "comparisons_api_decisions__decision_date__comparisons_get",
+        "parameters": [
+          {
+            "name": "decision_date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "title": "Decision Date"
+            }
+          },
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/decisions/{decision_date}/metrics": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Day Metrics",
+        "description": "Retrospective accuracy for one decision's next-day targets.",
+        "operationId": "day_metrics_api_decisions__decision_date__metrics_get",
+        "parameters": [
+          {
+            "name": "decision_date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "title": "Decision Date"
+            }
+          },
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/metrics": {
+      "get": {
+        "tags": [
+          "Wind analysis"
+        ],
+        "summary": "Range Metrics",
+        "description": "Pooled, observation-weighted retrospective metrics for an inclusive decision-date range.",
+        "operationId": "range_metrics_api_metrics_get",
+        "parameters": [
+          {
+            "name": "start_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "default": "2026-01-01",
+              "title": "Start Date"
+            }
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "default": "2026-01-31",
+              "title": "End Date"
+            }
+          },
+          {
+            "name": "cutoff_local",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration",
+              "title": "Cutoff Local"
+            },
+            "description": "Strictly-before cutoff, HH:MM Europe/London; defaults to server configuration"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Accuracy": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "no_matched_observations"
+            ],
+            "title": "Status"
+          },
+          "observation_count": {
+            "type": "integer",
+            "title": "Observation Count"
+          },
+          "mae_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mae Mw",
+            "description": "Mean absolute forecast-minus-actual error"
+          },
+          "rmse_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rmse Mw",
+            "description": "Square root of mean squared forecast-minus-actual error"
+          },
+          "bias_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bias Mw",
+            "description": "Signed mean forecast-minus-actual error; positive means overforecast"
+          },
+          "error_definition": {
+            "type": "string",
+            "const": "forecast_mw - actual_mw",
+            "title": "Error Definition",
+            "default": "forecast_mw - actual_mw"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "observation_count",
+          "mae_mw",
+          "rmse_mw",
+          "bias_mw"
+        ],
+        "title": "Accuracy"
+      },
+      "ActualResponse": {
+        "properties": {
+          "unit": {
+            "type": "string",
+            "const": "MW",
+            "title": "Unit",
+            "default": "MW"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Europe/London",
+            "title": "Timezone",
+            "default": "Europe/London"
+          },
+          "cutoff_local": {
+            "type": "string",
+            "title": "Cutoff Local"
+          },
+          "forecast_resolution_minutes": {
+            "type": "integer",
+            "const": 60,
+            "title": "Forecast Resolution Minutes",
+            "default": 60
+          },
+          "actual_resolution_minutes": {
+            "type": "integer",
+            "const": 30,
+            "title": "Actual Resolution Minutes",
+            "default": 30
+          },
+          "comparison_basis": {
+            "type": "string",
+            "title": "Comparison Basis",
+            "default": "Native hourly forecast point versus half-hour mean actual at equal startTime"
+          },
+          "analysis_mode": {
+            "type": "string",
+            "const": "retrospective_evaluation",
+            "title": "Analysis Mode",
+            "default": "retrospective_evaluation"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Decision Date"
+          },
+          "delivery_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Delivery Date"
+          },
+          "decision_cutoff_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Decision Cutoff Utc"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "dataset": {
+            "type": "string",
+            "const": "FUELHH",
+            "title": "Dataset",
+            "default": "FUELHH"
+          },
+          "fuel_type": {
+            "type": "string",
+            "const": "WIND",
+            "title": "Fuel Type",
+            "default": "WIND"
+          },
+          "actual_revision_policy": {
+            "type": "string",
+            "title": "Actual Revision Policy",
+            "default": "Latest publication in the extracted historical snapshot"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/ForecastPoint"
+            },
+            "type": "array",
+            "title": "Observations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutoff_local",
+          "warnings",
+          "decision_date",
+          "delivery_date",
+          "decision_cutoff_utc",
+          "coverage",
+          "observations"
+        ],
+        "title": "ActualResponse"
+      },
+      "ComparisonPoint": {
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Start Time"
+          },
+          "forecast_publish_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forecast Publish Time"
+          },
+          "actual_publish_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual Publish Time"
+          },
+          "forecast_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forecast Mw"
+          },
+          "actual_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actual Mw"
+          },
+          "error_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Mw"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "matched",
+              "structural_forecast_gap",
+              "missing_forecast",
+              "missing_actual",
+              "missing_both"
+            ],
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "start_time",
+          "forecast_publish_time",
+          "actual_publish_time",
+          "forecast_mw",
+          "actual_mw",
+          "error_mw",
+          "status"
+        ],
+        "title": "ComparisonPoint"
+      },
+      "ComparisonResponse": {
+        "properties": {
+          "unit": {
+            "type": "string",
+            "const": "MW",
+            "title": "Unit",
+            "default": "MW"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Europe/London",
+            "title": "Timezone",
+            "default": "Europe/London"
+          },
+          "cutoff_local": {
+            "type": "string",
+            "title": "Cutoff Local"
+          },
+          "forecast_resolution_minutes": {
+            "type": "integer",
+            "const": 60,
+            "title": "Forecast Resolution Minutes",
+            "default": 60
+          },
+          "actual_resolution_minutes": {
+            "type": "integer",
+            "const": 30,
+            "title": "Actual Resolution Minutes",
+            "default": 30
+          },
+          "comparison_basis": {
+            "type": "string",
+            "title": "Comparison Basis",
+            "default": "Native hourly forecast point versus half-hour mean actual at equal startTime"
+          },
+          "analysis_mode": {
+            "type": "string",
+            "const": "retrospective_evaluation",
+            "title": "Analysis Mode",
+            "default": "retrospective_evaluation"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Decision Date"
+          },
+          "delivery_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Delivery Date"
+          },
+          "decision_cutoff_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Decision Cutoff Utc"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonPoint"
+            },
+            "type": "array",
+            "title": "Observations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutoff_local",
+          "warnings",
+          "decision_date",
+          "delivery_date",
+          "decision_cutoff_utc",
+          "coverage",
+          "observations"
+        ],
+        "title": "ComparisonResponse"
+      },
+      "Coverage": {
+        "properties": {
+          "expected_half_hours": {
+            "type": "integer",
+            "title": "Expected Half Hours"
+          },
+          "expected_hourly_targets": {
+            "type": "integer",
+            "title": "Expected Hourly Targets"
+          },
+          "forecast_observations": {
+            "type": "integer",
+            "title": "Forecast Observations"
+          },
+          "actual_observations": {
+            "type": "integer",
+            "title": "Actual Observations"
+          },
+          "matched_observations": {
+            "type": "integer",
+            "title": "Matched Observations"
+          },
+          "missing_hourly_forecasts": {
+            "type": "integer",
+            "title": "Missing Hourly Forecasts"
+          },
+          "missing_half_hour_actuals": {
+            "type": "integer",
+            "title": "Missing Half Hour Actuals"
+          },
+          "structural_half_hour_forecast_gaps": {
+            "type": "integer",
+            "title": "Structural Half Hour Forecast Gaps"
+          },
+          "excluded_hourly_pairs": {
+            "type": "integer",
+            "title": "Excluded Hourly Pairs"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "expected_half_hours",
+          "expected_hourly_targets",
+          "forecast_observations",
+          "actual_observations",
+          "matched_observations",
+          "missing_hourly_forecasts",
+          "missing_half_hour_actuals",
+          "structural_half_hour_forecast_gaps",
+          "excluded_hourly_pairs"
+        ],
+        "title": "Coverage"
+      },
+      "DecisionInfo": {
+        "properties": {
+          "decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Decision Date"
+          },
+          "delivery_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Delivery Date"
+          },
+          "decision_cutoff_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Decision Cutoff Utc"
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "decision_date",
+          "delivery_date",
+          "decision_cutoff_utc",
+          "available",
+          "coverage"
+        ],
+        "title": "DecisionInfo"
+      },
+      "DecisionsResponse": {
+        "properties": {
+          "unit": {
+            "type": "string",
+            "const": "MW",
+            "title": "Unit",
+            "default": "MW"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Europe/London",
+            "title": "Timezone",
+            "default": "Europe/London"
+          },
+          "cutoff_local": {
+            "type": "string",
+            "title": "Cutoff Local"
+          },
+          "forecast_resolution_minutes": {
+            "type": "integer",
+            "const": 60,
+            "title": "Forecast Resolution Minutes",
+            "default": 60
+          },
+          "actual_resolution_minutes": {
+            "type": "integer",
+            "const": 30,
+            "title": "Actual Resolution Minutes",
+            "default": 30
+          },
+          "comparison_basis": {
+            "type": "string",
+            "title": "Comparison Basis",
+            "default": "Native hourly forecast point versus half-hour mean actual at equal startTime"
+          },
+          "analysis_mode": {
+            "type": "string",
+            "const": "retrospective_evaluation",
+            "title": "Analysis Mode",
+            "default": "retrospective_evaluation"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/DecisionInfo"
+            },
+            "type": "array",
+            "title": "Decisions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutoff_local",
+          "warnings",
+          "decisions"
+        ],
+        "title": "DecisionsResponse"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "ForecastPoint": {
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Start Time"
+          },
+          "publish_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publish Time"
+          },
+          "generation_mw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Generation Mw"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "start_time",
+          "publish_time",
+          "generation_mw"
+        ],
+        "title": "ForecastPoint"
+      },
+      "ForecastResponse": {
+        "properties": {
+          "unit": {
+            "type": "string",
+            "const": "MW",
+            "title": "Unit",
+            "default": "MW"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Europe/London",
+            "title": "Timezone",
+            "default": "Europe/London"
+          },
+          "cutoff_local": {
+            "type": "string",
+            "title": "Cutoff Local"
+          },
+          "forecast_resolution_minutes": {
+            "type": "integer",
+            "const": 60,
+            "title": "Forecast Resolution Minutes",
+            "default": 60
+          },
+          "actual_resolution_minutes": {
+            "type": "integer",
+            "const": 30,
+            "title": "Actual Resolution Minutes",
+            "default": 30
+          },
+          "comparison_basis": {
+            "type": "string",
+            "title": "Comparison Basis",
+            "default": "Native hourly forecast point versus half-hour mean actual at equal startTime"
+          },
+          "analysis_mode": {
+            "type": "string",
+            "const": "retrospective_evaluation",
+            "title": "Analysis Mode",
+            "default": "retrospective_evaluation"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Decision Date"
+          },
+          "delivery_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Delivery Date"
+          },
+          "decision_cutoff_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Decision Cutoff Utc"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "dataset": {
+            "type": "string",
+            "const": "WINDFOR",
+            "title": "Dataset",
+            "default": "WINDFOR"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/ForecastPoint"
+            },
+            "type": "array",
+            "title": "Observations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutoff_local",
+          "warnings",
+          "decision_date",
+          "delivery_date",
+          "decision_cutoff_utc",
+          "coverage",
+          "observations"
+        ],
+        "title": "ForecastResponse"
+      },
+      "MetricsResponse": {
+        "properties": {
+          "unit": {
+            "type": "string",
+            "const": "MW",
+            "title": "Unit",
+            "default": "MW"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Europe/London",
+            "title": "Timezone",
+            "default": "Europe/London"
+          },
+          "cutoff_local": {
+            "type": "string",
+            "title": "Cutoff Local"
+          },
+          "forecast_resolution_minutes": {
+            "type": "integer",
+            "const": 60,
+            "title": "Forecast Resolution Minutes",
+            "default": 60
+          },
+          "actual_resolution_minutes": {
+            "type": "integer",
+            "const": 30,
+            "title": "Actual Resolution Minutes",
+            "default": 30
+          },
+          "comparison_basis": {
+            "type": "string",
+            "title": "Comparison Basis",
+            "default": "Native hourly forecast point versus half-hour mean actual at equal startTime"
+          },
+          "analysis_mode": {
+            "type": "string",
+            "const": "retrospective_evaluation",
+            "title": "Analysis Mode",
+            "default": "retrospective_evaluation"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "start_decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Start Decision Date"
+          },
+          "end_decision_date": {
+            "type": "string",
+            "format": "date",
+            "title": "End Decision Date"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "accuracy": {
+            "$ref": "#/components/schemas/Accuracy"
+          },
+          "retrospective_only": {
+            "type": "boolean",
+            "const": true,
+            "title": "Retrospective Only",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cutoff_local",
+          "warnings",
+          "start_decision_date",
+          "end_decision_date",
+          "coverage",
+          "accuracy"
+        ],
+        "title": "MetricsResponse"
+      }
+    }
+  }
+}

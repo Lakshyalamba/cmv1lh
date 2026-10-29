@@ -1,0 +1,49 @@
+{
+  "deployment_performed": false,
+  "provider_resources_created": false,
+  "paid_resources_enabled": false,
+  "plan": "Vercel Hobby, personal unpaid evaluation; eligibility inferred, not provider-approved",
+  "asgi_verification": {
+    "decision_dates": 31,
+    "observation_rows": 1488,
+    "matched_pairs": 744,
+    "accuracy": {
+      "status": "ok",
+      "observation_count": 744,
+      "mae_mw": 2022.470430107527,
+      "rmse_mw": 2497.407157584179,
+      "bias_mw": 1745.9381720430108,
+      "error_definition": "forecast_mw - actual_mw"
+    },
+    "health": "ready"
+  },
+  "bundle_source_files": 160,
+  "bundle_source_bytes": 3771338,
+  "linux_runtime_wheel_uncompressed_bytes": 111660168,
+  "estimated_combined_bytes_before_provider_overhead": 115431506,
+  "source_integrity": "all manifest hashes unchanged after all-date requests",
+  "snapshot_sha256": "5befca71ef3fb5dc6112fd914907c06a7922cc3b0ac0c83f39ad8a55c394f0de",
+  "sample_response_bytes": {
+    "/api/decisions": 13037,
+    "/api/metrics": 1423,
+    "/api/decisions/2026-01-01/forecasts": 3681,
+    "/api/decisions/2026-01-01/actuals": 6182,
+    "/api/decisions/2026-01-01/comparisons": 11125,
+    "/api/decisions/2026-01-01/metrics": 1395
+  },
+  "python_tests": 45,
+  "frontend_tests": 15,
+  "typescript": "passed",
+  "production_build": "passed",
+  "provider_build": "not executed",
+  "provider_cold_start": "not measured",
+  "official_schema_validation": {
+    "vercel.json": "passed",
+    "render.yaml": "passed"
+  },
+  "local_browser": {
+    "jan31_mae_mw_display": "967.9",
+    "jan1_tooltip": "Forecast 18,781 MW; actual 15,228 MW",
+    "console_errors": []
+  }
+}

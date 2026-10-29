@@ -1,0 +1,1548 @@
+{
+  "/api/decisions": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "decisions": [
+        {
+          "decision_date": "2026-01-01",
+          "delivery_date": "2026-01-02",
+          "decision_cutoff_utc": "2026-01-01T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-02",
+          "delivery_date": "2026-01-03",
+          "decision_cutoff_utc": "2026-01-02T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-03",
+          "delivery_date": "2026-01-04",
+          "decision_cutoff_utc": "2026-01-03T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-04",
+          "delivery_date": "2026-01-05",
+          "decision_cutoff_utc": "2026-01-04T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-05",
+          "delivery_date": "2026-01-06",
+          "decision_cutoff_utc": "2026-01-05T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-06",
+          "delivery_date": "2026-01-07",
+          "decision_cutoff_utc": "2026-01-06T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-07",
+          "delivery_date": "2026-01-08",
+          "decision_cutoff_utc": "2026-01-07T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-08",
+          "delivery_date": "2026-01-09",
+          "decision_cutoff_utc": "2026-01-08T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-09",
+          "delivery_date": "2026-01-10",
+          "decision_cutoff_utc": "2026-01-09T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-10",
+          "delivery_date": "2026-01-11",
+          "decision_cutoff_utc": "2026-01-10T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-11",
+          "delivery_date": "2026-01-12",
+          "decision_cutoff_utc": "2026-01-11T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-12",
+          "delivery_date": "2026-01-13",
+          "decision_cutoff_utc": "2026-01-12T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-13",
+          "delivery_date": "2026-01-14",
+          "decision_cutoff_utc": "2026-01-13T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-14",
+          "delivery_date": "2026-01-15",
+          "decision_cutoff_utc": "2026-01-14T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-15",
+          "delivery_date": "2026-01-16",
+          "decision_cutoff_utc": "2026-01-15T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-16",
+          "delivery_date": "2026-01-17",
+          "decision_cutoff_utc": "2026-01-16T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-17",
+          "delivery_date": "2026-01-18",
+          "decision_cutoff_utc": "2026-01-17T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-18",
+          "delivery_date": "2026-01-19",
+          "decision_cutoff_utc": "2026-01-18T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-19",
+          "delivery_date": "2026-01-20",
+          "decision_cutoff_utc": "2026-01-19T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-20",
+          "delivery_date": "2026-01-21",
+          "decision_cutoff_utc": "2026-01-20T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-21",
+          "delivery_date": "2026-01-22",
+          "decision_cutoff_utc": "2026-01-21T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-22",
+          "delivery_date": "2026-01-23",
+          "decision_cutoff_utc": "2026-01-22T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-23",
+          "delivery_date": "2026-01-24",
+          "decision_cutoff_utc": "2026-01-23T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-24",
+          "delivery_date": "2026-01-25",
+          "decision_cutoff_utc": "2026-01-24T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-25",
+          "delivery_date": "2026-01-26",
+          "decision_cutoff_utc": "2026-01-25T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-26",
+          "delivery_date": "2026-01-27",
+          "decision_cutoff_utc": "2026-01-26T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-27",
+          "delivery_date": "2026-01-28",
+          "decision_cutoff_utc": "2026-01-27T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-28",
+          "delivery_date": "2026-01-29",
+          "decision_cutoff_utc": "2026-01-28T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-29",
+          "delivery_date": "2026-01-30",
+          "decision_cutoff_utc": "2026-01-29T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-30",
+          "delivery_date": "2026-01-31",
+          "decision_cutoff_utc": "2026-01-30T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        },
+        {
+          "decision_date": "2026-01-31",
+          "delivery_date": "2026-02-01",
+          "decision_cutoff_utc": "2026-01-31T09:20:00Z",
+          "available": true,
+          "coverage": {
+            "expected_half_hours": 48,
+            "expected_hourly_targets": 24,
+            "forecast_observations": 24,
+            "actual_observations": 48,
+            "matched_observations": 24,
+            "missing_hourly_forecasts": 0,
+            "missing_half_hour_actuals": 0,
+            "structural_half_hour_forecast_gaps": 24,
+            "excluded_hourly_pairs": 0
+          }
+        }
+      ]
+    }
+  },
+  "/api/decisions/2026-01-01/forecasts": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "decision_date": "2026-01-01",
+      "delivery_date": "2026-01-02",
+      "decision_cutoff_utc": "2026-01-01T09:20:00Z",
+      "coverage": {
+        "expected_half_hours": 48,
+        "expected_hourly_targets": 24,
+        "forecast_observations": 24,
+        "actual_observations": 48,
+        "matched_observations": 24,
+        "missing_hourly_forecasts": 0,
+        "missing_half_hour_actuals": 0,
+        "structural_half_hour_forecast_gaps": 24,
+        "excluded_hourly_pairs": 0
+      },
+      "dataset": "WINDFOR",
+      "observations": [
+        {
+          "start_time": "2026-01-02T00:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18781.0
+        },
+        {
+          "start_time": "2026-01-02T01:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18793.0
+        },
+        {
+          "start_time": "2026-01-02T02:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18802.0
+        },
+        {
+          "start_time": "2026-01-02T03:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18847.0
+        },
+        {
+          "start_time": "2026-01-02T04:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18895.0
+        },
+        {
+          "start_time": "2026-01-02T05:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18869.0
+        },
+        {
+          "start_time": "2026-01-02T06:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18803.0
+        },
+        {
+          "start_time": "2026-01-02T07:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18654.0
+        },
+        {
+          "start_time": "2026-01-02T08:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18338.0
+        },
+        {
+          "start_time": "2026-01-02T09:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18148.0
+        },
+        {
+          "start_time": "2026-01-02T10:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17948.0
+        },
+        {
+          "start_time": "2026-01-02T11:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17629.0
+        },
+        {
+          "start_time": "2026-01-02T12:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17541.0
+        },
+        {
+          "start_time": "2026-01-02T13:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17605.0
+        },
+        {
+          "start_time": "2026-01-02T14:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17712.0
+        },
+        {
+          "start_time": "2026-01-02T15:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17776.0
+        },
+        {
+          "start_time": "2026-01-02T16:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 17859.0
+        },
+        {
+          "start_time": "2026-01-02T17:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18097.0
+        },
+        {
+          "start_time": "2026-01-02T18:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18281.0
+        },
+        {
+          "start_time": "2026-01-02T19:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18269.0
+        },
+        {
+          "start_time": "2026-01-02T20:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18202.0
+        },
+        {
+          "start_time": "2026-01-02T21:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18241.0
+        },
+        {
+          "start_time": "2026-01-02T22:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18293.0
+        },
+        {
+          "start_time": "2026-01-02T23:00:00Z",
+          "publish_time": "2026-01-01T07:30:00Z",
+          "generation_mw": 18313.0
+        }
+      ]
+    }
+  },
+  "/api/decisions/2026-01-01/actuals": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "decision_date": "2026-01-01",
+      "delivery_date": "2026-01-02",
+      "decision_cutoff_utc": "2026-01-01T09:20:00Z",
+      "coverage": {
+        "expected_half_hours": 48,
+        "expected_hourly_targets": 24,
+        "forecast_observations": 24,
+        "actual_observations": 48,
+        "matched_observations": 24,
+        "missing_hourly_forecasts": 0,
+        "missing_half_hour_actuals": 0,
+        "structural_half_hour_forecast_gaps": 24,
+        "excluded_hourly_pairs": 0
+      },
+      "dataset": "FUELHH",
+      "fuel_type": "WIND",
+      "actual_revision_policy": "Latest publication in the extracted historical snapshot",
+      "observations": [
+        {
+          "start_time": "2026-01-02T00:00:00Z",
+          "publish_time": "2026-01-02T00:30:00Z",
+          "generation_mw": 15228.0
+        },
+        {
+          "start_time": "2026-01-02T00:30:00Z",
+          "publish_time": "2026-01-02T01:00:00Z",
+          "generation_mw": 15505.0
+        },
+        {
+          "start_time": "2026-01-02T01:00:00Z",
+          "publish_time": "2026-01-02T01:30:00Z",
+          "generation_mw": 15599.0
+        },
+        {
+          "start_time": "2026-01-02T01:30:00Z",
+          "publish_time": "2026-01-02T02:00:00Z",
+          "generation_mw": 15763.0
+        },
+        {
+          "start_time": "2026-01-02T02:00:00Z",
+          "publish_time": "2026-01-02T02:30:00Z",
+          "generation_mw": 15807.0
+        },
+        {
+          "start_time": "2026-01-02T02:30:00Z",
+          "publish_time": "2026-01-02T03:00:00Z",
+          "generation_mw": 15943.0
+        },
+        {
+          "start_time": "2026-01-02T03:00:00Z",
+          "publish_time": "2026-01-02T03:30:00Z",
+          "generation_mw": 16096.0
+        },
+        {
+          "start_time": "2026-01-02T03:30:00Z",
+          "publish_time": "2026-01-02T04:00:00Z",
+          "generation_mw": 16125.0
+        },
+        {
+          "start_time": "2026-01-02T04:00:00Z",
+          "publish_time": "2026-01-02T04:30:00Z",
+          "generation_mw": 16050.0
+        },
+        {
+          "start_time": "2026-01-02T04:30:00Z",
+          "publish_time": "2026-01-02T05:00:00Z",
+          "generation_mw": 16072.0
+        },
+        {
+          "start_time": "2026-01-02T05:00:00Z",
+          "publish_time": "2026-01-02T05:30:00Z",
+          "generation_mw": 15900.0
+        },
+        {
+          "start_time": "2026-01-02T05:30:00Z",
+          "publish_time": "2026-01-02T06:00:00Z",
+          "generation_mw": 15876.0
+        },
+        {
+          "start_time": "2026-01-02T06:00:00Z",
+          "publish_time": "2026-01-02T06:30:00Z",
+          "generation_mw": 15328.0
+        },
+        {
+          "start_time": "2026-01-02T06:30:00Z",
+          "publish_time": "2026-01-02T07:00:00Z",
+          "generation_mw": 14980.0
+        },
+        {
+          "start_time": "2026-01-02T07:00:00Z",
+          "publish_time": "2026-01-02T07:30:00Z",
+          "generation_mw": 15121.0
+        },
+        {
+          "start_time": "2026-01-02T07:30:00Z",
+          "publish_time": "2026-01-02T08:00:00Z",
+          "generation_mw": 15055.0
+        },
+        {
+          "start_time": "2026-01-02T08:00:00Z",
+          "publish_time": "2026-01-02T08:30:00Z",
+          "generation_mw": 15590.0
+        },
+        {
+          "start_time": "2026-01-02T08:30:00Z",
+          "publish_time": "2026-01-02T09:00:00Z",
+          "generation_mw": 15733.0
+        },
+        {
+          "start_time": "2026-01-02T09:00:00Z",
+          "publish_time": "2026-01-02T09:30:00Z",
+          "generation_mw": 15745.0
+        },
+        {
+          "start_time": "2026-01-02T09:30:00Z",
+          "publish_time": "2026-01-02T10:00:00Z",
+          "generation_mw": 15344.0
+        },
+        {
+          "start_time": "2026-01-02T10:00:00Z",
+          "publish_time": "2026-01-02T10:30:00Z",
+          "generation_mw": 15394.0
+        },
+        {
+          "start_time": "2026-01-02T10:30:00Z",
+          "publish_time": "2026-01-02T11:00:00Z",
+          "generation_mw": 15326.0
+        },
+        {
+          "start_time": "2026-01-02T11:00:00Z",
+          "publish_time": "2026-01-02T11:30:00Z",
+          "generation_mw": 15488.0
+        },
+        {
+          "start_time": "2026-01-02T11:30:00Z",
+          "publish_time": "2026-01-02T12:00:00Z",
+          "generation_mw": 15444.0
+        },
+        {
+          "start_time": "2026-01-02T12:00:00Z",
+          "publish_time": "2026-01-02T12:30:00Z",
+          "generation_mw": 15023.0
+        },
+        {
+          "start_time": "2026-01-02T12:30:00Z",
+          "publish_time": "2026-01-02T13:00:00Z",
+          "generation_mw": 14492.0
+        },
+        {
+          "start_time": "2026-01-02T13:00:00Z",
+          "publish_time": "2026-01-02T13:30:00Z",
+          "generation_mw": 15559.0
+        },
+        {
+          "start_time": "2026-01-02T13:30:00Z",
+          "publish_time": "2026-01-02T14:00:00Z",
+          "generation_mw": 15119.0
+        },
+        {
+          "start_time": "2026-01-02T14:00:00Z",
+          "publish_time": "2026-01-02T14:30:00Z",
+          "generation_mw": 15230.0
+        },
+        {
+          "start_time": "2026-01-02T14:30:00Z",
+          "publish_time": "2026-01-02T15:00:00Z",
+          "generation_mw": 15796.0
+        },
+        {
+          "start_time": "2026-01-02T15:00:00Z",
+          "publish_time": "2026-01-02T15:30:00Z",
+          "generation_mw": 15997.0
+        },
+        {
+          "start_time": "2026-01-02T15:30:00Z",
+          "publish_time": "2026-01-02T16:00:00Z",
+          "generation_mw": 15140.0
+        },
+        {
+          "start_time": "2026-01-02T16:00:00Z",
+          "publish_time": "2026-01-02T16:30:00Z",
+          "generation_mw": 14528.0
+        },
+        {
+          "start_time": "2026-01-02T16:30:00Z",
+          "publish_time": "2026-01-02T17:00:00Z",
+          "generation_mw": 14662.0
+        },
+        {
+          "start_time": "2026-01-02T17:00:00Z",
+          "publish_time": "2026-01-02T17:30:00Z",
+          "generation_mw": 14951.0
+        },
+        {
+          "start_time": "2026-01-02T17:30:00Z",
+          "publish_time": "2026-01-02T18:00:00Z",
+          "generation_mw": 14954.0
+        },
+        {
+          "start_time": "2026-01-02T18:00:00Z",
+          "publish_time": "2026-01-02T18:30:00Z",
+          "generation_mw": 14637.0
+        },
+        {
+          "start_time": "2026-01-02T18:30:00Z",
+          "publish_time": "2026-01-02T19:00:00Z",
+          "generation_mw": 14312.0
+        },
+        {
+          "start_time": "2026-01-02T19:00:00Z",
+          "publish_time": "2026-01-02T19:30:00Z",
+          "generation_mw": 14649.0
+        },
+        {
+          "start_time": "2026-01-02T19:30:00Z",
+          "publish_time": "2026-01-02T20:00:00Z",
+          "generation_mw": 14677.0
+        },
+        {
+          "start_time": "2026-01-02T20:00:00Z",
+          "publish_time": "2026-01-02T20:30:00Z",
+          "generation_mw": 14341.0
+        },
+        {
+          "start_time": "2026-01-02T20:30:00Z",
+          "publish_time": "2026-01-02T21:00:00Z",
+          "generation_mw": 14212.0
+        },
+        {
+          "start_time": "2026-01-02T21:00:00Z",
+          "publish_time": "2026-01-02T21:30:00Z",
+          "generation_mw": 14655.0
+        },
+        {
+          "start_time": "2026-01-02T21:30:00Z",
+          "publish_time": "2026-01-02T22:00:00Z",
+          "generation_mw": 14394.0
+        },
+        {
+          "start_time": "2026-01-02T22:00:00Z",
+          "publish_time": "2026-01-02T22:30:00Z",
+          "generation_mw": 13958.0
+        },
+        {
+          "start_time": "2026-01-02T22:30:00Z",
+          "publish_time": "2026-01-02T23:00:00Z",
+          "generation_mw": 13983.0
+        },
+        {
+          "start_time": "2026-01-02T23:00:00Z",
+          "publish_time": "2026-01-02T23:30:00Z",
+          "generation_mw": 14133.0
+        },
+        {
+          "start_time": "2026-01-02T23:30:00Z",
+          "publish_time": "2026-01-03T00:00:00Z",
+          "generation_mw": 14202.0
+        }
+      ]
+    }
+  },
+  "/api/decisions/2026-01-01/comparisons": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "decision_date": "2026-01-01",
+      "delivery_date": "2026-01-02",
+      "decision_cutoff_utc": "2026-01-01T09:20:00Z",
+      "coverage": {
+        "expected_half_hours": 48,
+        "expected_hourly_targets": 24,
+        "forecast_observations": 24,
+        "actual_observations": 48,
+        "matched_observations": 24,
+        "missing_hourly_forecasts": 0,
+        "missing_half_hour_actuals": 0,
+        "structural_half_hour_forecast_gaps": 24,
+        "excluded_hourly_pairs": 0
+      },
+      "observations": [
+        {
+          "start_time": "2026-01-02T00:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T00:30:00Z",
+          "forecast_mw": 18781.0,
+          "actual_mw": 15228.0,
+          "error_mw": 3553.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T00:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T01:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15505.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T01:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T01:30:00Z",
+          "forecast_mw": 18793.0,
+          "actual_mw": 15599.0,
+          "error_mw": 3194.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T01:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T02:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15763.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T02:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T02:30:00Z",
+          "forecast_mw": 18802.0,
+          "actual_mw": 15807.0,
+          "error_mw": 2995.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T02:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T03:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15943.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T03:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T03:30:00Z",
+          "forecast_mw": 18847.0,
+          "actual_mw": 16096.0,
+          "error_mw": 2751.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T03:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T04:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 16125.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T04:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T04:30:00Z",
+          "forecast_mw": 18895.0,
+          "actual_mw": 16050.0,
+          "error_mw": 2845.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T04:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T05:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 16072.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T05:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T05:30:00Z",
+          "forecast_mw": 18869.0,
+          "actual_mw": 15900.0,
+          "error_mw": 2969.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T05:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T06:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15876.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T06:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T06:30:00Z",
+          "forecast_mw": 18803.0,
+          "actual_mw": 15328.0,
+          "error_mw": 3475.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T06:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T07:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14980.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T07:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T07:30:00Z",
+          "forecast_mw": 18654.0,
+          "actual_mw": 15121.0,
+          "error_mw": 3533.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T07:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T08:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15055.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T08:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T08:30:00Z",
+          "forecast_mw": 18338.0,
+          "actual_mw": 15590.0,
+          "error_mw": 2748.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T08:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T09:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15733.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T09:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T09:30:00Z",
+          "forecast_mw": 18148.0,
+          "actual_mw": 15745.0,
+          "error_mw": 2403.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T09:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T10:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15344.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T10:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T10:30:00Z",
+          "forecast_mw": 17948.0,
+          "actual_mw": 15394.0,
+          "error_mw": 2554.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T10:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T11:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15326.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T11:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T11:30:00Z",
+          "forecast_mw": 17629.0,
+          "actual_mw": 15488.0,
+          "error_mw": 2141.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T11:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T12:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15444.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T12:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T12:30:00Z",
+          "forecast_mw": 17541.0,
+          "actual_mw": 15023.0,
+          "error_mw": 2518.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T12:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T13:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14492.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T13:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T13:30:00Z",
+          "forecast_mw": 17605.0,
+          "actual_mw": 15559.0,
+          "error_mw": 2046.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T13:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T14:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15119.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T14:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T14:30:00Z",
+          "forecast_mw": 17712.0,
+          "actual_mw": 15230.0,
+          "error_mw": 2482.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T14:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T15:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15796.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T15:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T15:30:00Z",
+          "forecast_mw": 17776.0,
+          "actual_mw": 15997.0,
+          "error_mw": 1779.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T15:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T16:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 15140.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T16:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T16:30:00Z",
+          "forecast_mw": 17859.0,
+          "actual_mw": 14528.0,
+          "error_mw": 3331.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T16:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T17:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14662.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T17:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T17:30:00Z",
+          "forecast_mw": 18097.0,
+          "actual_mw": 14951.0,
+          "error_mw": 3146.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T17:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T18:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14954.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T18:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T18:30:00Z",
+          "forecast_mw": 18281.0,
+          "actual_mw": 14637.0,
+          "error_mw": 3644.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T18:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T19:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14312.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T19:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T19:30:00Z",
+          "forecast_mw": 18269.0,
+          "actual_mw": 14649.0,
+          "error_mw": 3620.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T19:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T20:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14677.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T20:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T20:30:00Z",
+          "forecast_mw": 18202.0,
+          "actual_mw": 14341.0,
+          "error_mw": 3861.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T20:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T21:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14212.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T21:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T21:30:00Z",
+          "forecast_mw": 18241.0,
+          "actual_mw": 14655.0,
+          "error_mw": 3586.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T21:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T22:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14394.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T22:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T22:30:00Z",
+          "forecast_mw": 18293.0,
+          "actual_mw": 13958.0,
+          "error_mw": 4335.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T22:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-02T23:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 13983.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        },
+        {
+          "start_time": "2026-01-02T23:00:00Z",
+          "forecast_publish_time": "2026-01-01T07:30:00Z",
+          "actual_publish_time": "2026-01-02T23:30:00Z",
+          "forecast_mw": 18313.0,
+          "actual_mw": 14133.0,
+          "error_mw": 4180.0,
+          "status": "matched"
+        },
+        {
+          "start_time": "2026-01-02T23:30:00Z",
+          "forecast_publish_time": null,
+          "actual_publish_time": "2026-01-03T00:00:00Z",
+          "forecast_mw": null,
+          "actual_mw": 14202.0,
+          "error_mw": null,
+          "status": "structural_forecast_gap"
+        }
+      ]
+    }
+  },
+  "/api/decisions/2026-01-01/metrics": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "start_decision_date": "2026-01-01",
+      "end_decision_date": "2026-01-01",
+      "coverage": {
+        "expected_half_hours": 48,
+        "expected_hourly_targets": 24,
+        "forecast_observations": 24,
+        "actual_observations": 48,
+        "matched_observations": 24,
+        "missing_hourly_forecasts": 0,
+        "missing_half_hour_actuals": 0,
+        "structural_half_hour_forecast_gaps": 24,
+        "excluded_hourly_pairs": 0
+      },
+      "accuracy": {
+        "status": "ok",
+        "observation_count": 24,
+        "mae_mw": 3070.375,
+        "rmse_mw": 3139.279647997823,
+        "bias_mw": 3070.375,
+        "error_definition": "forecast_mw - actual_mw"
+      },
+      "retrospective_only": true
+    }
+  },
+  "/api/metrics": {
+    "status": 200,
+    "body": {
+      "unit": "MW",
+      "timezone": "Europe/London",
+      "cutoff_local": "09:20",
+      "forecast_resolution_minutes": 60,
+      "actual_resolution_minutes": 30,
+      "comparison_basis": "Native hourly forecast point versus half-hour mean actual at equal startTime",
+      "analysis_mode": "retrospective_evaluation",
+      "warnings": [
+        "WINDFOR hourly forecast points and FUELHH half-hour averages have different interval semantics.",
+        "No interpolation: :30 forecast gaps are structural; metrics use native equal-startTime pairs only.",
+        "Actuals and errors are retrospective outcomes, not information available at the decision cutoff.",
+        "Publication time is an availability proxy; historical backfills and client receipt latency are unknown.",
+        "The cutoff is a configurable auction scenario, not a universal GB procurement deadline.",
+        "Historical errors are not calibrated prediction intervals or purchase-volume recommendations."
+      ],
+      "start_decision_date": "2026-01-01",
+      "end_decision_date": "2026-01-31",
+      "coverage": {
+        "expected_half_hours": 1488,
+        "expected_hourly_targets": 744,
+        "forecast_observations": 744,
+        "actual_observations": 1488,
+        "matched_observations": 744,
+        "missing_hourly_forecasts": 0,
+        "missing_half_hour_actuals": 0,
+        "structural_half_hour_forecast_gaps": 744,
+        "excluded_hourly_pairs": 0
+      },
+      "accuracy": {
+        "status": "ok",
+        "observation_count": 744,
+        "mae_mw": 2022.470430107527,
+        "rmse_mw": 2497.407157584179,
+        "bias_mw": 1745.9381720430108,
+        "error_definition": "forecast_mw - actual_mw"
+      },
+      "retrospective_only": true
+    }
+  },
+  "/api/metrics?cutoff_local=24:00": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "invalid_request",
+        "message": "query.cutoff_local: String should match pattern '^(?:[01][0-9]|2[0-3]):[0-5][0-9]$'"
+      }
+    }
+  }
+}
